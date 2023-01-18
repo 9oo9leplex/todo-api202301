@@ -26,4 +26,4 @@ spring:
     hibernate:
       database: mysql
       generate-ddl: true
-      ddl-auto: create
+      ddl-auto: update
