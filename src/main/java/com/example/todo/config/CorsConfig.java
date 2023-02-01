@@ -14,7 +14,8 @@ public class CorsConfig implements WebMvcConfigurer {
 
         // api cors 정책 설정
         registry.addMapping("/api/**")
-                .allowedOrigins("http://localhost:3000") // api요청 허용 URL
+                .allowedOrigins("http://localhost:3000",
+                        "http://practice-s3-ycm-bucket001.s3-website.ap-northeast-2.amazonaws.com/") // api요청 허용 URL
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
                 .allowedHeaders("*")
                 .allowCredentials(true)
