@@ -1,4 +1,4 @@
-package com.example.todo.todoapi.dto.rs;
+package com.example.todo.todoapi.dto.response;
 
 import com.example.todo.todoapi.entity.TodoEntity;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @EqualsAndHashCode
 @Builder
-public class TodoDetailRsDTO {
+public class TodoDetailResponseDTO {
 
     private String id;
     private String title;
@@ -21,7 +21,7 @@ public class TodoDetailRsDTO {
     private LocalDateTime regDate;
 
     // 엔터티를 받아서 DTO로 만들어주는 생성자
-    public TodoDetailRsDTO(TodoEntity entity) {
+    public TodoDetailResponseDTO(TodoEntity entity) {
         this.id = entity.getTodoId();
         this.title = entity.getTitle();
         this.done = entity.isDone();

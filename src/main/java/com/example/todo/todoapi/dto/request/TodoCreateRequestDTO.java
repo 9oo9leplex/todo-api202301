@@ -1,27 +1,27 @@
-package com.example.todo.todoapi.dto.rq;
+package com.example.todo.todoapi.dto.request;
 
 import com.example.todo.todoapi.entity.TodoEntity;
 import lombok.*;
-import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-@Getter @Setter @ToString
+@Setter @Getter @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
 @Builder
-public class TodoCreateRqDTO {
+public class TodoCreateRequestDTO {
 
     @NotBlank
     @Size(min = 2, max = 10)
     private String title;
 
-    // dto -> entity
-    public TodoEntity todoEntity(){
+    // 이 dto를 엔터티로 변환
+    public TodoEntity toEntity() {
         return TodoEntity.builder()
                 .title(this.title)
                 .build();
     }
+
 }
